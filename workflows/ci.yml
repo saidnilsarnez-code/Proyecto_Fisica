@@ -1,0 +1,5 @@
+- name: imagen del grafico
+  uses: actions/upload-artifact@v4
+  with:
+    name: grafica_resultado
+    path: grafica.png
