@@ -1,5 +1,19 @@
-  name: imagen del grafico
-  uses: actions/upload-artifact@v4
-  with:
-    name: grafica_resultado
-    path: grafica.png
+name: imagen del grafico
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  subir-grafico:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Subir imagen del gráfico
+        uses: actions/upload-artifact@v4
+        with:
+          name: grafica_resultado
+          path: grafica.png
